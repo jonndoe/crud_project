@@ -1,0 +1,46 @@
+version: '3.7'
+
+
+services:
+
+  web:
+
+    build: .
+    command: python /code/manage.py runserver 0.0.0.0:8000
+    #command: gunicorn bookstore_project.wsgi -b 0.0.0.0:8000
+
+    environment:
+      - ENVIRONMENT=development
+
+      - SECRET_KEY=yivl4yf=dpj@p%-gq_zyf#5=_+!i875^kq*)xfd4!o4rf3u2_k
+
+      - DEBUG=1
+
+    # A new folder ./code/ will be created in the root dir of
+    # container and
+    # All code changed in directory /code/ inside container
+    # will be sync with out host folder . (local) where this file sits
+    # and vice versa
+    volumes:
+
+      - .:/code
+
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+
+  db:
+    image: postgres:11
+
+    # this means new volume (books_)?????????postgres_data will be created
+    # in our host /var/lib/docker/volumes
+    # and this folder/volume will be populated with data from
+    # container's folder /var/lib/postgresql/data/
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+
+
+volumes:
+
+  postgres_data:
