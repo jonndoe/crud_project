@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     #local
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
+    'crudobjects.apps.CrudobjectsConfig',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,11 @@
+{% extends '_base.html' %}
+
+{% block title %}{{ crudobject.title }}{% endblock title %}
+
+{% block content %}
+  <div class="book-detail">
+    <h2>{{ crudobject.title }}</a></h2>
+    <p>Author: {{ crudobject.author }}</p>
+    <p>Price: {{ crudobject.price }}</p>
+  </div>
+{% endblock content %}>

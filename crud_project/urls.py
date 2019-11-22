@@ -25,4 +25,5 @@ urlpatterns = [
 
     # local apps
     path('', include('pages.urls')),
+    path('crudobjects/', include('crudobjects.urls')),
 ]
