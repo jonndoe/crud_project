@@ -1,7 +1,7 @@
 from django.test import SimpleTestCase
 from django.urls import reverse , resolve
 
-from .views import HomePageView #, AboutPageView
+from .views import HomePageView, AboutPageView
 
 
 class HomepageTests(SimpleTestCase):
@@ -32,7 +32,7 @@ class HomepageTests(SimpleTestCase):
         )
 
 
-'''
+
 
 class AboutPageTests(SimpleTestCase):
 
@@ -57,7 +57,6 @@ class AboutPageTests(SimpleTestCase):
         view = resolve('/about/')
         self.assertEqual(
             view.func.__name__,
-            AboutPageView.as_view().__name__
+            AboutPageView.as_view().__name__)
 
 
-'''
