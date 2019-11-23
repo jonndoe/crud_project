@@ -6,13 +6,19 @@ services:
   web:
 
     build: .
-    command: python /code/manage.py runserver 0.0.0.0:8000
-    #command: gunicorn crud_project.wsgi -b 0.0.0.0:8000
+    #command: python /code/manage.py runserver 0.0.0.0:8000
+    command: gunicorn crud_project.wsgi -b 0.0.0.0:8000
 
     environment:
       - ENVIRONMENT=production
 
       - SECRET_KEY=yivl4yf=dpj@p%-gq_zyf#5=_+!i875^kq*)xfd4!o4rf3u2_k
+
+      - DATABASE_NAME=postgres
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=postgres
+      - DATABASE_HOST=db
+      - DATABASE_PORT=5432
 
       - DEBUG=0
 
