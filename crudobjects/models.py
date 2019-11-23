@@ -15,6 +15,11 @@ class Crudobject(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     crudcover = models.ImageField(upload_to='crudcovers/', blank=True)
 
+    class Meta:
+        permissions = [
+            ("special_status", "Can read all crudobjects")
+        ]
+
     def __str__(self):
         return self.title
 
