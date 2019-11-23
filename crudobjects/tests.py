@@ -2,7 +2,7 @@ from django.contrib.auth import get_user_model
 from django.test import Client, TestCase
 from django.urls import reverse
 
-from .models import Crudobject #, Review
+from .models import Crudobject, Comment
 
 
 class CrudobjectTests(TestCase):
@@ -20,12 +20,12 @@ class CrudobjectTests(TestCase):
             author = 'JK Rowling',
             price = '25.00',
         )
-        '''
-        self.review = Review.objects.create(
+
+        self.review = Comment.objects.create(
             crudobject = self.crudobject,
             author = self.user,
-            review = 'An excellent review',
-        )'''
+            text = 'An excellent review',
+        )
 
     def test_crudobject_listing(self):
         self.assertEqual(f'{self.crudobject.title}', 'Harry Potter')
@@ -44,7 +44,7 @@ class CrudobjectTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(no_response.status_code, 404)
         self.assertContains(response, 'Harry Potter')
-        #self.assertContains(response, 'An excellent review')
+        self.assertContains(response, 'An excellent review')
         self.assertTemplateUsed(response, 'crudobjects/crudobject_detail.html')
 
 
