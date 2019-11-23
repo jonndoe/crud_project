@@ -1,0 +1,18 @@
+# heroku create --region eu
+
+# add environment variables
+
+# heroku stack:set container -a serene-castle-61541
+
+# heroku addons:create heroku-postgresql:hobby-dev -a serene-castle-61541
+
+# heroku git:remote -a serene-castle-61541
+
+# git push heroku master
+
+#somehow the next commands doesnt work from laptop
+# so go to heroku account and run bash remotly
+
+# heroku run python manage.py migrate
+
+# heroku run python manage.py createsuperuser
