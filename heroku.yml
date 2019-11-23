@@ -12,4 +12,4 @@ release:
     - python manage.py collectstatic --noinput
 
 run:
-  web: gunicorn
+  web: gunicorn crud_project.wsgi
