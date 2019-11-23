@@ -8,7 +8,7 @@
 
 {% for crudobject in crudobject_list %}
 <div>
-    <h2><a href="{% url 'crudobject_detail' crudobject.pk %}">{{ crudobject.title }}</a></h2>
+    <h2><a href="{{ crudobject.get_absolute_url }}">{{ crudobject.title }}</a></h2>
 </div>
 {% endfor %}
 {% endblock content %}
