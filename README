@@ -16,3 +16,11 @@
 # heroku run python manage.py migrate
 
 # heroku run python manage.py createsuperuser
+
+# add the name of your heroku-app to ALLOWED_HOSTS
+
+# after you made any change in your local source code:
+# git status
+# git add .
+# git commit -m "some changes here"
+# git push heroku master

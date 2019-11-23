@@ -37,7 +37,7 @@ SECRET_KEY = get_env_value('SECRET_KEY')
 DEBUG = int(os.environ.get('DEBUG', default=0))
 ENVIRONMENT = os.environ.get('ENVIRONMENT', default='production')
 
-ALLOWED_HOSTS = ['serene-castle-61541.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['frozen-caverns-52331.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
